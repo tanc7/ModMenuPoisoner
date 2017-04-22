@@ -22,6 +22,6 @@ Then from the Main Menu you have the following options:
 	#3. Poison Mod Menu Executables via a Wordlist full of GTA V Mod Executables
 	#SETUP. Creates the necessary directories and setup
 
-Number 1 is really simple, it poisons one file, runs msfvenom encoders through it, and adds "virus-like" characteristics
-Number 2 just opens a GUI window for the poisoned files
-Number 3 Means you need to supply a wordlist, just a text file, with the location of one mod file per line
+	Number 1 is really simple, it poisons one file, runs msfvenom encoders through it, and adds "virus-like" characteristics
+	Number 2 just opens a GUI window for the poisoned files
+	Number 3 Means you need to supply a wordlist, just a text file, with the location of one mod file per line
