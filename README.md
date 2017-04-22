@@ -25,3 +25,15 @@ Then from the Main Menu you have the following options:
 	Number 1 is really simple, it poisons one file, runs msfvenom encoders through it, and adds "virus-like" characteristics
 	Number 2 just opens a GUI window for the poisoned files
 	Number 3 Means you need to supply a wordlist, just a text file, with the location of one mod file per line
+
+# How to Submit the Poisoned Executables to get them flagged
+
+Go to VirusTotal
+>www.virustotal.com
+
+Submit the files in your directory to virus scans one at a time (unfortunately multi-scans are not available)
+>/root/Documents/ModMenusReencoded
+
+# DISCLAIMER, Keep your Windows Partition CLEAN
+
+Please try to avoid leaving remnants of mod menus in a Windows Hard Drive. Rockstar Anti-Cheat is known to scan your directories, and even if you don't cheat, you could still get banned for it
