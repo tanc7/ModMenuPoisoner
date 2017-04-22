@@ -71,6 +71,7 @@ def main():
         '#1. Poison a Mod Menu and make it look like a virus to VirusTotal',
         '#2. Open the directory where your altered mod menu files are located',
         '#3. Poison Mod Menu Executables via a Wordlist full of GTA V Mod Executables',
+        '#4. Use a completely custom method of payload generation',
         '#SETUP. Creates the necessary directories and setup'
     ]
 
@@ -88,6 +89,9 @@ def main():
     elif opt_Choice == "3":
         os.system('clear')
         wordlist_poison()
+    elif opt_Choice == "4":
+        os.system('clear')
+        os.system('python /root/ModMenuPoisoner/CustomPoisoning.py')
     elif opt_Choice == "SETUP":
         os.system('clear')
         setup()
