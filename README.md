@@ -4,6 +4,7 @@ Triggers False-Flag Antivirus Alerts against GTA V Mod Menus
 # Installation Instructions
 git clone this repo on your terminal
 >cd /root
+
 >git clone https://github.com/tanc7/ModMenuPoisoner
 
 # How to Start Using It
