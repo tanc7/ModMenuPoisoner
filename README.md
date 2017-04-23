@@ -1,6 +1,10 @@
 # ModMenuPoisoner
 Triggers False-Flag Antivirus Alerts against GTA V Mod Menus, which forces Mod Menu devs to push out new updates to prevent their cheat menus from getting auto-deleted by Antivirus Programs.
 
+# Basis for this tactic
+http://www.reuters.com/article/us-kaspersky-rivals-idUSKCN0QJ1CR20150814
+"Exclusive: Russian antivirus firm faked malware to harm rivals - Ex-employees "
+
 # Requirements
 	1. Kali Linux https://www.kali.org/downloads/
 	2. Metasploit Framework
