@@ -50,7 +50,7 @@ def poison_mod():
     )
     print 'Now running command: ' + cmd_String
     os.system(cmd_String)
-    print 'Poisoned Mod Menu file generated, please see: ' + output_File + ' to submit it to VirusTotal!'
+
     print 'DISCLAIMER: Please wait up to 2 weeks so that all the AV solutions will begin accusing it of being a virus and get it auto-deleted on their machines'
     main()
 
