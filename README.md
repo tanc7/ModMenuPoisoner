@@ -1,9 +1,27 @@
-# ModMenuPoisoner
+# GTA V Mod Menu Poisoner
 Triggers False-Flag Antivirus Alerts against GTA V Mod Menus, which forces Mod Menu devs to push out new updates to prevent their cheat menus from getting auto-deleted by Antivirus Programs.
+
+# How it works
+	1. We take a harmless cheat menu file, usually a DLL injection file like dsound.dll
+	2. And we inject malware code into it
+	3. We then submit it to the cloud-antivirus system known as VirusTotal
+	4. VirusTotal alerts to AV manufacturers that this particular filename and hash = malicious
+	5. The AV manufacturers pick up the database update, and immediately kills any look-a-likes for mod menus
+	6. The Mod Menu Dev gets real mad. He releases a new, slightly altered version to get around the blockage
+	7. We come back, and do this shit again, and we can do this much faster and quicker than he is able to release more dickhead mod menus
+
+Stay on the lookout on mpgh.net for any fresh mod menus to tamper with and get flagged!
 
 # Basis for this tactic
 http://www.reuters.com/article/us-kaspersky-rivals-idUSKCN0QJ1CR20150814
 "Exclusive: Russian antivirus firm faked malware to harm rivals - Ex-employees "
+
+Furthermore, what is described in this article WILL NOT WORK on mod menus
+http://www.pcworld.com/article/2883692/virustotal-tackles-false-positive-malware-detections-plaguing-antivirus-and-software-vendors.html
+
+Who on earth would be stupid enough to register/list their Dickhead Menu as a "trusted source"? These modders want to protect their anonymity, first and foremost.
+
+And so... the cycle continues.
 
 # Requirements
 	1. Kali Linux https://www.kali.org/downloads/
@@ -36,6 +54,9 @@ http://www.reuters.com/article/us-kaspersky-rivals-idUSKCN0QJ1CR20150814
 
 
 # Installation Instructions
+Installation instructions here:
+> https://raw.githubusercontent.com/tanc7/ModMenuPoisoner/master/HowToInstallandUseForTotalNewbies.webm
+
 git clone this repo on your terminal
 >cd /root
 
