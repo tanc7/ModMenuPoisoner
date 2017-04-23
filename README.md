@@ -109,9 +109,24 @@ Where filename = whatever mod file you were messing with
 			
 			>And even now it's not hard to find numerous Veil tutorials that end with the demonstrator uploading their payload to VirusTotal:"
 
-># It shows a error 'Error: Couldn't find DOS e_magic'
+># 3. It shows a error 'Error: Couldn't find DOS e_magic'
 
 Yeah this too. The executable format targeted is NOT supported by msfvenom. You will need to go back to #2 in this troubleshooting menu and go run Veil-Evasion. 
+
+># 4. How do I know it worked?
+
+Observe this photo: https://raw.githubusercontent.com/tanc7/ModMenuPoisoner/master/Screenshot%20from%202017-04-23%2006-40-35.png
+
+You see how it says:
+Microsoft 	Trojan:Win32/Swrort.A 	20170423 
+
+That means it has been added to the Microsoft Antivirus Database. The next time Windows 10 gets pushed a "forced-update" from Microsoft, then Windows Defender will immediately run a passive scan and detect/quarantine/kill the "virus app". The mod menu of course!
+
+># 5. What if it is labeled as a virus but not by Microsoft?
+
+Word will travel, and eventually it will make it to Microsoft's databases. Remember, this program actually injects a malware executable with connect-back (reverse-shell) capabilities, however, I coded it to make it "inert". Unless you modify the LHOST parameter in the main file, it cannot harm anyone. All I did was set LHOST=8.8.8.8 (Google DNS LOL).
+
+I should consider changing that Listener HOST IP to Rockstar, so they will eventually figure out that I am helping them by poisoning Mod Menus, and also, they would be able to get the IP of the person that downloaded it and have them banned.
 
 # DISCLAIMER, Keep your Windows Partition CLEAN
 
