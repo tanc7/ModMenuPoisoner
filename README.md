@@ -12,6 +12,25 @@ Triggers False-Flag Antivirus Alerts against GTA V Mod Menus, which forces Mod M
 
 Stay on the lookout on mpgh.net for any fresh mod menus to tamper with and get flagged!
 
+# Installation Instructions (New)
+
+1. Git Clone the repo when you open your terminal
+
+>'git clone https://github.com/tanc7/ModMenuPoisoner'
+
+2. Navigate to the cloned repo
+
+>'cd ModMenuPoisoner'
+
+3. Run the autoinstaller
+
+>'python setup.py'
+
+4. After a few minutes install is complete. Run Mod Menu Poisoner by opening terminal and typing:
+
+>'ModMenuPoisoner.py'
+
+
 # Basis for this tactic
 http://www.reuters.com/article/us-kaspersky-rivals-idUSKCN0QJ1CR20150814
 "Exclusive: Russian antivirus firm faked malware to harm rivals - Ex-employees "
@@ -37,23 +56,23 @@ And so... the cycle continues.
 	#1. SINGLE FILE, Poison a Mod Menu and make it look like a virus to VirusTotal
 	#2. OPEN ALTERED FILE DIRECTORY, Open the directory where your altered mod menu files are located
 	#3. MULTIPLE FILES, Poison Mod Menu Executables via a Wordlist full of GTA V Mod Executables
-	
+
 
 ### CUSTOMIZED USAGE ###
 	#4. CUSTOM PARAMETERS, Use a completely custom method of payload generation
 	#5. VEIL-EVASION, Run Veil-Evasion on a executable instead (if msfvenom doesnt work)
-	
+
 
  ### NO-ENCODER, if there are encoding errors ###
 	#6. NO-ENCODER, Run msfvenom WITHOUT encoders (tends to be more successful)
 	#7. NO-ENCODER (MULTIPLE), Run msfvenom on a wordlist of files
-	
+
 
  ### YOUR FIRST TIME ###
 	#SETUP. Creates the necessary directories and setup
 
 
-# Installation Instructions
+# Installation Instructions (Old)
 Installation instructions here:
 > https://raw.githubusercontent.com/tanc7/ModMenuPoisoner/master/HowToInstallandUseForTotalNewbies.webm
 
@@ -95,7 +114,7 @@ Submit the files in your directory to virus scans one at a time (unfortunately m
 
 ># 1. msfvenom says "an encoding exception occured"
 
-It's hard for me to explain why it does this, but basically you need to use a DIFFERENT encoder. That is the hardest part of using msfvenom, is to figure out which encoder would not cause errors to the file. Or you can opt for NO encoding instead. 
+It's hard for me to explain why it does this, but basically you need to use a DIFFERENT encoder. That is the hardest part of using msfvenom, is to figure out which encoder would not cause errors to the file. Or you can opt for NO encoding instead.
 
 But then the altered mod won't even run in the first place because it'll hit a bad byte and crash or something. You know... if you actually wanted to "be a dick" and send a modder menu file to someone else, and wanted him or her to connect back to your listener or something.
 
@@ -115,31 +134,31 @@ The file is located at
 
 Where filename = whatever mod file you were messing with
 
->I am also aware that this is a douchy-move. Because submitting a sample, particularly a veil-evasion modified sample ruins the obfuscation process and R&D invested. However, the version of VE (Veil-Evasion 2.28) that is on your Kali Repo is actually outdated as of March 2017 and has yet to receive a update. The newest copy of Veil-Evasion has to be manually installed. 
+>I am also aware that this is a douchy-move. Because submitting a sample, particularly a veil-evasion modified sample ruins the obfuscation process and R&D invested. However, the version of VE (Veil-Evasion 2.28) that is on your Kali Repo is actually outdated as of March 2017 and has yet to receive a update. The newest copy of Veil-Evasion has to be manually installed.
 >Furthermore, there is always that one asshole that ruined Veil no matter how many times the devs have tried to plead with the user to NOT submit a sample altered by veil to VirusTotal. Veil 2.0 was already ruined.
 >If you really wanted a undetectable payload, you should consider using NON-METASPLOIT payloads. Just because a payload has been generated in Metasploit makes it easily detectable due to its popularity. Consider using Pupy Python RAT or Powershell Empire or something.
 
 >From https://null-byte.wonderhowto.com/news/antivirus-bypass-friendly-reminder-never-upload-your-samples-virustotal-0163390/
 			>"Respect the Developers Who Shared Their Code with You"
-			
+
 			>Veil-Evasion was released in 2013. Chris Truncer, one of its creators, announced its release on his personal blog. At the very top, he posted this plea:
-			
+
 			>Aaaannnndddd a few days later someone posted this comment:
-			
+
 			>Thanks, alex!!.
-			
+
 			>And even now it's not hard to find numerous Veil tutorials that end with the demonstrator uploading their payload to VirusTotal:"
 
 ># 3. It shows a error 'Error: Couldn't find DOS e_magic'
 
-Yeah this too. The executable format targeted is NOT supported by msfvenom. You will need to go back to #2 in this troubleshooting menu and go run Veil-Evasion. 
+Yeah this too. The executable format targeted is NOT supported by msfvenom. You will need to go back to #2 in this troubleshooting menu and go run Veil-Evasion.
 
 ># 4. How do I know it worked?
 
 Observe this photo: https://raw.githubusercontent.com/tanc7/ModMenuPoisoner/master/Screenshot%20from%202017-04-23%2006-40-35.png
 
 You see how it says:
-Microsoft 	Trojan:Win32/Swrort.A 	20170423 
+Microsoft 	Trojan:Win32/Swrort.A 	20170423
 
 That means it has been added to the Microsoft Antivirus Database. The next time Windows 10 gets pushed a "forced-update" from Microsoft, then Windows Defender will immediately run a passive scan and detect/quarantine/kill the "virus app". The mod menu of course!
 
@@ -166,6 +185,6 @@ Remember, by default the password for the user is:
 
 Which is root spelled backwards
 
-Press your Windows key, and then type "terminal" in the search box and press [ENTER]. That will open a terminal to allow you to run commands. 
+Press your Windows key, and then type "terminal" in the search box and press [ENTER]. That will open a terminal to allow you to run commands.
 
-To copy and paste in terminal, you must use [CTRL][SHIFT][C] or [V] instead of the usual Windows copy/paste command. This only applies to terminal. Everything else in Kali Linux, like word processors have ordinary copy/paste shortcuts. 
+To copy and paste in terminal, you must use [CTRL][SHIFT][C] or [V] instead of the usual Windows copy/paste command. This only applies to terminal. Everything else in Kali Linux, like word processors have ordinary copy/paste shortcuts.
