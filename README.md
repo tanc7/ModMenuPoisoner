@@ -168,6 +168,14 @@ Word will travel, and eventually it will make it to Microsoft's databases. Remem
 
 I should consider changing that Listener HOST IP to Rockstar, so they will eventually figure out that I am helping them by poisoning Mod Menus, and also, they would be able to get the IP of the person that downloaded it and have them banned.
 
+># 6. Why would I need a encoder in the first place?
+
+It's a common misconception that a msfvenom encoder would "make your virus invisible." That is a job for Veil-Evasion, not msfvenom. Veil-Evasion changes the signature of the payload to make it harder to detect from Antivirus. However, a msfvenom Meterpreter shell barely touches the disk (in memory) until you tell it to (persistence exploits).
+
+Msfvenom encodes the traffic between you and your victim (if you were to use this to load targeted malware with reverse shells and listeners), and allows it to bypass a IDS (Intrusion Detection Systems).
+
+Furthermore you would also need to enable StageEncoding in your Metasploit listener to reap the full benefits. Otherwise a section of the traffic will still be in cleartext and therefore, detectable.
+
 # DISCLAIMER, Keep your Windows Partition CLEAN
 
 Please try to avoid leaving remnants of mod menus in a Windows Hard Drive. Rockstar Anti-Cheat is known to scan your directories, and even if you don't cheat, you could still get banned for it
