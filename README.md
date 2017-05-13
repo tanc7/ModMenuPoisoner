@@ -1,6 +1,12 @@
 # GTA V Mod Menu Poisoner
 Triggers False-Flag Antivirus Alerts against GTA V Mod Menus, which forces Mod Menu devs to push out new updates to prevent their cheat menus from getting auto-deleted by Antivirus Programs.
 
+# New UPDATE: Altered injection methods. Now can trigger a 47/61 AV detection ratio on Virus Total.
+
+Switched from exe binary injection to reflective DLL injection. In a response to mod menu developers recently going either closed-source, or adding crypto to their DLL hooks.
+
+Substantially increased antivirus detection rate. Almost guaranteed a auto-delete if the modder accidentally left AV on before starting the game. 
+
 # How it works
 	1. We take a harmless cheat menu file, usually a DLL injection file like dsound.dll
 	2. And we inject malware code into it
